@@ -3,6 +3,7 @@ const request = require('request');
 const nodemailer = require('nodemailer');
 const Promise = require('bluebird');
 
+
 const getMessages = (token, channel, options) => {
   return new Promise((resolve, reject) => {
     request.post('https://slack.com/api/channels.history', {form: {token: token, channel: channel}}, (err, res, body) => {
